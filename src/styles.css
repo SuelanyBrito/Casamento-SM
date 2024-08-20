@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+*
+{
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --first-color: blueviolet;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(assets/img/TEXTURE.png);
+  background-color: #f8fbca;
+
+}

@@ -1,0 +1,175 @@
+<div class="home">
+  <div class="banner-direita tamBanner"></div>
+  <div class="banner-esquerda"></div>
+  <div class="banner-esquerda-inferior"></div>
+  <div class="container">
+    <div class="row">
+      <div class="centered-text up-position">
+        <p class="mobile-text">CONVIDAMOS VOCÊ</p>
+        <br>
+        <p class="mobile-text">PARA CELEBRAR O NOSSO CASAMENTO</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="centered-text middle-position">
+    <h1>Samuel & Mariana</h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="centered-text down-position col-12">
+
+        <p class="frase-com-linhas">08 Fevereiro, 2025 às 15:30</p>
+
+        <div class="menuItens">
+          <div class="container menuHome">
+            <div class="row">
+              <div class="col-3">
+                <a href="#" class="linkMenu" data-bs-toggle="modal" data-bs-target="#igreja">
+                  <img class="imgMenuHome imgMenu" src="assets\img\home\igreja.png" alt="">
+                  <p class="card-text textHomeP">Igreja</p>
+                </a>
+              </div>
+              <div class="col-3">
+                <a href="#" class="linkMenu" data-bs-toggle="modal" data-bs-target="#festa">
+                  <img class="imgMenuHome imgMenu" src="assets\img\home\festa.png" alt="">
+                  <p class="card-text textHomeP">Festa</p>
+                </a>
+              </div>
+              <div class="col-3">
+                <a href="#" class="linkMenu" routerLink="/lista-casamento">
+                  <img class="imgMenuHome imgMenu" src="assets\img\home\presente.png" alt="">
+                  <!-- <p class="card-text textHomeP">Lista de Presentes</p> -->
+                  <p class="card-text textHomeP">Presentes</p>
+                </a>
+              </div>
+              <div class="col-3" data-bs-toggle="modal" data-bs-target="#padrinhos">
+                <a href="#" class="linkMenu">
+                  <img class="imgMenuHome imgMenu" src="assets\img\home\padrinhos.png" alt="">
+                  <p class="card-text textHomeP">Padrinhos</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contagem">
+          <div class="item">
+            <span id="dias" class="valor"></span>
+            <span class="unidade"> dias</span>
+          </div>
+          <div class="item">
+            <span id="horas" class="valor"></span>
+            <span class="unidade"> horas</span>
+          </div>
+          <div class="item">
+            <span id="minutos" class="valor"></span>
+            <span class="unidade"> minutos</span>
+          </div>
+          <div class="item">
+            <span id="segundos" class="valor"></span>
+            <span class="unidade"> segundos</span>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <!-- Modal Igreja-->
+  <div class="modal fade" id="igreja" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modalH">
+          <h5 class="modal-title text-center" id="exampleModalLabel">Vamos à Igreja!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="assets\img\candelaria.png" class="card-img-top imgModal" alt="...">
+          <p class="card-text place text-center">Paróquia Nossa Senhora Da Candelária</p>
+          <p class="card-text address text-center">R. Castro Alves, 781 - Cerâmica,São Caetano do Sul </p>
+        </div>
+        <div #container class="modal-footer modalF">
+          <a>
+            <button  ngxClipboard [cbContent]="'Paróquia Nossa Senhora Da Candelária R. Castro Alves, 781 - Cerâmica, São Caetano do Sul '" [container]="container" type="button" class="btn btn-primary"><i class="fa fa-files-o" aria-hidden="true"></i> Copiar Endereço</button>
+          </a>
+          <a href="https://m.uber.com/ul/?action=setPickup&client_id=92wsifyVsfgPdvUuR_xBSuKcKaSKlWB1cDxri9ak&pickup=my_location&dropoff[formatted_address]=R.%20Castro%20Alves%2C%20781%20-%20Cer%C3%A2mica%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%20Brasil&dropoff[latitude]=-23.626986&dropoff[longitude]=-46.568577" target="_blank">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal"><i class="fa-brands fa-uber"></i> Vou de uber
+            </button>
+          </a>
+          <a href="https://www.google.com/maps?q=R.+Castro+Alves,+781,+Cerâmica,+São+Caetano+do+Sul,+SP,+09540-030" target="_blank">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="fa fa-map-marker" aria-hidden="true"></i> Abrir no Maps
+            </button>
+          </a>
+          <a href="https://ul.waze.com/ul?place=ChIJi8k9O8RczpQRjZvL79qp43w&ll=-23.62698590%2C-46.56857680&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+            <button type="button" class="btn btn-secondary btn-waze" data-bs-dismiss="modal"><i class="fa-brands fa-waze"></i> Abrir no Waze</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Festa -->
+  <div class="modal fade" id="festa" tabindex="-1" aria-labelledby="festaModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modalH">
+          <h5 class="modal-title text-center" id="festaModal">Vamos à Festa!!!!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="">
+          <img src="assets\img\masterday.jpeg" class="card-img-top imgModal" alt="...">
+          <p class="card-text place text-center">Buffet Master Day</p>
+          <p class="card-text address text-center">R. Ceará, 363 - Fundação, São Caetano do Sul</p>
+        </div>
+        <div #container2 class="modal-footer modalF text-center">
+          <a>
+            <button  ngxClipboard [cbContent]="'Buffet Master Day R. Ceará, 363 - Fundação, São Caetano do Sul'" [container]="container2" type="button" class="btn btn-primary"><i class="fa fa-files-o" aria-hidden="true"></i> Copiar Endereço</button>
+          </a>
+            <a href="https://m.uber.com/ul/?action=setPickup&client_id=TidzCZv9VG_iUw_k5Rppnm2D7RBo5ebTIAqtw8Rf&pickup=my_location&dropoff[formatted_address]=Buffet%20Master%20Day%20-%20Rua%20Cear%C3%A1%20-%20Funda%C3%A7%C3%A3o%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%20Brasil&dropoff[latitude]=-23.603977&dropoff[longitude]=-46.573312" target="_blank">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal"><i class="fa-brands fa-uber"></i> Vou de uber
+              </button>
+            </a>
+            <a href="https://www.google.com/maps/dir//Buffet+Master+Day+-+R.+Cear%C3%A1,+363+-+Funda%C3%A7%C3%A3o,+S%C3%A3o+Caetano+do+Sul+-+SP,+09520-410/@-23.6291213,-46.5880677,12z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce5cc188e54379:0xf03539dab808e5e6!2m2!1d-46.5733115!2d-23.6039771!3e0?entry=ttu" target="_blank">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="fa fa-map-marker" aria-hidden="true"></i> Vou de Maps
+              </button>
+            </a>
+            <a href="https://ul.waze.com/ul?preview_venue_id=205391388.2054110488.25886420&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank">
+              <button type="button" class="btn btn-secondary btn-waze" data-bs-dismiss="modal"><i class="fa-brands fa-waze"></i> Vou de Waze</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal Padrinhos -->
+    <div class="modal fade" id="padrinhos" tabindex="-1" aria-labelledby="padrinhosModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header modalH">
+            <h5 class="modal-title text-center" id="padrinhosModal"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="">
+            <div class="container itensPadrinhos">
+              <div class="row text-center">
+                <div class="col-6">
+                  <a (click)="mostrarModalMadrinhas()" class="linkMenu">
+                    <img class="imgPadrinhos" src="assets\img\home\vestido.png" alt="">
+                    <p class="card-text textPadrinhos">sou madrinha</p>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a (click)="mostrarModalPadrinhos()" class="linkMenu">
+                    <img class="imgPadrinhos" src="assets\img\home\terno.png" alt="">
+                    <p class="card-text textPadrinhos">sou padrinho</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="blocoFinal">
+  <div class="container">
+    <div class="row text-center final">
+      <div class="col-12">
+        <div class="gallery">
+          <div *ngFor="let image of images" class="image-wrapper">
+            <img [src]="image" (click)="openModal(image)" />
+          </div>
+        </div>
+
+        <div class="modal" *ngIf="selectedImage" (click)="closeModal()">
+          <span class="close" (click)="closeModal()">&times;</span>
+          <span class="prev" (click)="prevImage($event)">&#10094;</span>
+          <img [src]="selectedImage" class="modal-content" (click)="$event.stopPropagation()" />
+          <span class="next" (click)="nextImage($event)">&#10095;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

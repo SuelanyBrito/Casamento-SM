@@ -1,0 +1,199 @@
+.lista-casamento{
+  background-image: url(../../../assets/img/TEXTURE.png);
+  background-color: #eaefff;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-style: normal;
+}
+
+.blocoFinal{
+  padding: 40px;
+}
+
+.text-lista-casamento h1{
+  font-family: 'Imperial Script', cursive;
+  font-size: 80px;
+  margin-top: 30px;
+}
+
+.comCarinho{
+  text-align: right;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #000;
+  font-size: 17px;
+}
+
+.florAzulMeio{
+  width: 5%;
+  margin-bottom: 25px;
+}
+
+.texto{
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.agradecimento h5{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #000;
+  margin-top: 25px;
+}
+
+
+.referenciaTexto{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  color: #7f7f7f;;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.comCarinho{
+  text-align: right;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #000;
+  font-size: 17px;
+}
+
+/* celular com tela grande */
+@media (max-width: 781px) and (max-width: 1450px) {
+  .text-lista-casamento h1{
+    font-family: 'Imperial Script', cursive;
+    font-size: 60px;
+    margin-top: 30px;
+  }
+
+  .florAzulMeio{
+    width: 10%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .referenciaTexto{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    color: #7f7f7f;;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .agradecimento h5{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #000;
+    font-size: 16px;
+    margin-top: 25px;
+    text-align: left;
+  }
+
+  .comCarinho{
+    text-align: right;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 200;
+    color: #7a7979;
+    font-size: 14px;
+  }
+}
+
+.card {
+  position: relative;
+  width: 280px;
+  height: 420px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 35px rgba(0,0,0,0.3);
+}
+
+.card .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: circle(180px at center 0);
+  text-align: center;
+}
+
+.card .circle img {
+  padding: 60px 0;
+  width: 80%;
+}
+
+.card .content {
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  page-break-after: 20px;
+  text-align: center;
+}
+
+.card .content p {
+  color: #666;
+}
+
+.card .content a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.card .content a:hover {
+  background: #333;
+}
+
+.card:nth-child(1) .circle,
+.card:nth-child(1) .content a {
+  background: #9acffae8;
+}
+
+.card:nth-child(2) .circle,
+.card:nth-child(2) .content a {
+  background: #9acffae8;
+}
+
+.card:nth-child(3) .circle,
+.card:nth-child(3) .content a {
+  background: #9acffae8;
+}
+
+.card:nth-child(4) .circle,
+.card:nth-child(4) .content a {
+  background: #9acffae8;
+}
+
+@media (max-width: 768px) {
+  .container .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 320px; /* Aumentei o max-width para garantir que não fique muito estreito */
+  }
+}
+
