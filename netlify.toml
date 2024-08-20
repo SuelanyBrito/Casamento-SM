@@ -1,3 +1,7 @@
+[build]
+  command = "ng build"
+  publish = "dist/weddingSM"
+  
 [[redirects]]
 from = "/*"
 to = "/index.html"
