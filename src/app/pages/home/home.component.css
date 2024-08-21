@@ -1,10 +1,24 @@
+@font-face {
+  font-family: 'Myfont';
+  src: url('../../../assets/fonts/Better_Saturday.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacialfont';
+  src: url('../../../assets/fonts/GlacialIndifference-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.home .banner-direita {
+.home .banner-right {
   width: 35%;
   height: 100%;
   position: absolute;
@@ -15,7 +29,7 @@
   background-position: top;
 }
 
-.home .banner-esquerda-inferior {
+.home .banner-left-inferior {
   width: 30%;
   height: 100%;
   background-image: url(../../../assets/img/home/florT2.png);
@@ -27,52 +41,67 @@
   background-position: bottom;
 }
 
+.up-position{
+  font-size: 20px;
+  top: 10%;
+  line-height: 1.0;
+}
+
 .centered-text {
   text-align: center;
   position: absolute;
-}
-
-@font-face {
-  font-family: 'Myfont';
-  src: url('../../../assets/fonts/Better_Saturday.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.centered-text h1 {
-  font-size: 100px;
-  font-family: 'Myfont', 'sans-serif';
-  color: #614124;
-  margin: 0;
-}
-
-.centered-text p {
-  line-height: 0;
-}
-
-
-.up-position{
-  color: #614124;
-  text-transform: uppercase;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   z-index: 1;
-  font-weight: bold;
-}
-
-.up-position p {
-  line-height: 0;
+  color: #614124;
+  font-family: 'Glacialfont', sans-serif;
 }
 
 .middle-position{
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-family: 'Sacramento', cursive;
+  top: 32%;
+}
+
+.centered-text h1 {
+  font-size: 6em;
+  font-family: 'Myfont', 'sans-serif';
+}
+
+.invite {
+  font-size: 20px;
+  margin: 35px 0 20px 0;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.date{
+  text-transform: uppercase;
+  font-size: 25px;
+  border-top: 1px solid #614124;
+  border-bottom: 1px solid #614124;
+  display: inline-block;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 65%;
+  padding: 20px;
+}
+
+.menu-itens {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.img-menu {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .down-position{
@@ -143,207 +172,14 @@
   line-height: 0;
   max-width: 100%;
   text-transform: none;
-  color: #4d99d8;
-}
-
-.frase-com-linhas {
-  text-transform: none;
-  font-size: 36px;
-  font-family: 'Raleway', sans-serif;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-  display: inline-block;
-  padding: 26px;
-  margin-bottom: 50px;
+  color: #0d3e08;
 }
 
 .modalF button{
   margin: 2px;
 }
 
-/* // show it on devices with max of 767 px and lower */
 
-@media (max-width: 767px) {
-  .hidden-mobile {
-    display: none;
-  }
-
-  .home .banner-direita {
-    width: 30%; /* Ajuste conforme necessário */
-    height: 100%; /* Usando 100% para cobrir a altura do elemento pai */
-    position: absolute;
-    top: 0;
-    background-image: url(../../../assets/img/home/flor1.png);
-    background-repeat: no-repeat;
-    background-size: contain; /* Alterado de 'cover' para 'contain' */
-    background-position: top; /* Posiciona a imagem na parte inferior */
-  }
-
-  .centered-text h1 {
-    font-size: 95px;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .down-position{
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    transform: translate(-50%, -50%); /* Move a div para o centro */
-    z-index: 1; /* Define uma ordem de empilhamento superior (na frente das imagens) */
-  }
-
-  .frase-com-linhas {
-    font-size: 23px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-  }
-
-  .menuHome .imgMenu{
-    /* margin-top: 25px; */
-    width: 45%;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-  }
-
-  .ltsPresente .imgPresente{
-    /* margin-top: 25px; */
-    width: 100%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 20px;
-    line-height: 0; /* Altere o valor conforme necessário, 1 seria o valor normal */
-    max-width: 100%; /* Texto não ultrapassará a largura da caixa */
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .up-position {
-    font-size: 13px;
-    text-align: right;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .ltsPresente .imgPresente{
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1450px) {
-  .hidden-mobile {
-    display: none;
-  }
-
-  .home .banner-direita {
-    width: 20%;
-    height: 100%;
-    top: 0;
-    background-image: url(../../../assets/img/home/flor1.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .centered-text h1 {
-    font-size: 95px;
-  }
-
-  .down-position{
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 0;
-  }
-
-  .frase-com-linhas {
-    text-transform: none;
-    font-size: 26px;
-    font-family: 'Raleway', sans-serif;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-    display: inline-block;
-    padding: 26px;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .menuHome .imgMenu{
-    margin-top: 15px;
-    width: 40%;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .ltsPresente .imgPresente{
-    margin-top: 15px;
-    width: 40%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 12px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .up-position {
-    font-size: 15px;
-  }
-}
 
 
 .btn-waze{
@@ -414,95 +250,4 @@
 
 .linkMenu{
   text-decoration: none;
-}
-
-
-@media (max-width: 400px){
-  .home{
-    width: 30%;
-    height: 100%;
-  }
-
-  .up-position{
-    font-size: 10px;
-    text-align: right;
-  }
-
-  .centered-text h1 {
-    font-size: 50px;
-  }
-
-  .frase-com-linhas{
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-top: 67px;
-    padding: 20px;
-  }
-
-  .menuHome .imgMenu{
-    margin-top: 0;
-    width: 100%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 12px;
-    margin-top: 20px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-    margin-top: 30px;
-  }
-
-  .place{
-    margin-bottom: 6px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-  }
-
-  .address{
-    padding: 0 12px 0 12px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 11px;
-  }
-
-  .modalF button{
-    margin: 2px;
-    width: 100%;
-  }
-
-  .contagem {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .valor {
-    font-size: 15px;
-  }
-
-  .item {
-    padding: 5px;
-  }
-
-  .unidade {
-    font-size: 10px;
-  }
 }
