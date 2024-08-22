@@ -1,25 +1,38 @@
-/* Estilo para o banner */
+@font-face {
+  font-family: 'Myfont';
+  src: url('../../../assets/fonts/Better_Saturday.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacialfont';
+  src: url('../../../assets/fonts/GlacialIndifference-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.home .banner-direita {
-  width: 20%;
+.home .banner-right {
+  width: 35%;
   height: 100%;
   position: absolute;
   top: 0;
-  background-image: url(../../../assets/img/home/flor1.png);
+  background-image: url(../../../assets/img/home/florT.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
 }
 
-.home .banner-esquerda-inferior {
-  width: 12%;
+.home .banner-left-inferior {
+  width: 30%;
   height: 100%;
-  background-image: url(../../../assets/img/home/cantoInferiorDireito.png);
+  background-image: url(../../../assets/img/home/florT2.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: fixed;
@@ -28,73 +41,104 @@
   background-position: bottom;
 }
 
+.up-position{
+  font-size: 20px;
+  top: 10%;
+  line-height: 1.0;
+}
+
 .centered-text {
   text-align: center;
   position: absolute;
-}
-
-.centered-text h1 {
-  font-size: 100px;
-  /* color: #787da3; */
-  color: #000000;
-  margin: 0;
-}
-
-.centered-text p {
-  line-height: 0;
-}
-
-
-.up-position{
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   z-index: 1;
-  font-weight: bold;
-}
-
-.up-position p {
-  line-height: 0;
+  color: #614124;
+  font-family: 'Glacialfont', sans-serif;
 }
 
 .middle-position{
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-family: 'Sacramento', cursive;
+  top: 32%;
 }
 
-.down-position{
-  text-transform: uppercase;
+.centered-text h1 {
+  font-size: 6em;
+  font-family: 'Myfont', 'sans-serif';
+}
+
+.invite {
   font-size: 20px;
-  font-family: 'Raleway', sans-serif;
-  top: 75%;
+  margin: 35px 0 20px 0;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.date{
+  text-transform: uppercase;
+  font-size: 25px;
+  border-top: 1px solid #614124;
+  border-bottom: 1px solid #614124;
+  display: inline-block;
+  padding: 20px;
+}
+
+.container{
+  text-align: center;
+  position: absolute;
+  top: 62%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  transform: translate(-50%);
+}
+
+.menu-itens {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item{
+  margin: 20px;
+}
+
+a{
+  color: currentColor;
+  text-decoration: none;
+}
+
+.text-home{
+  font-size: 20px;
+  margin-top: 36px;
+  line-height: 0;
+  max-width: 100%;
+  color: #614124;
+  font-family: 'Glacialfont', sans-serif;
+}
+
+.img-menu {
+  width: 100%;
+  max-width: 100px;
 }
 
 .contagem {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .item {
-  margin: 0 10px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.1);
+  border: 5px solid rgba(255,255,255,0.3);
+  width: 100px;
+  height: 100px;
+  border-radius: 99px;
+  margin: 5px;
 }
 
 .valor {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   color: #6f6f64;
 }
@@ -105,268 +149,155 @@
   font-weight: bold;
 }
 
-.menuHome .imgMenu{
-  /* margin-top: 100px; */
-  width: 45%;
+
+@media (min-width: 800px) and (max-width: 1330px) {
+  .home .banner-right {
+    width: 25%;
+  }
+
+  .home .banner-left-inferior {
+    width: 20%;
+  }
+
+  .up-position{
+    font-size: 12px;
+    top: 10%;
+    line-height: 1.0;
+  }
+
+  .middle-position{
+    top: 25%;
+  }
+
+  .centered-text h1 {
+    font-size: 3em;
+  }
+
+  .container {
+    top: 55%;
+  }
+
+  .invite {
+    font-size: 17px;
+  }
+
+  .date{
+    font-size: 20px;
+  }
+
+  .menu-item{
+    margin: 5px;
+  }
+
+  .text-home{
+    font-size: 18px;
+  }
+
+  .img-menu {
+    max-width: 90px;
+  }
+
+  .contagem {
+    margin-top: 2rem;
+  }
+
+  .item {
+    width: 90px;
+    height: 90px;
+  }
+
+  .valor {
+    font-size: 25px;
+  }
 }
 
-.ltsPresente {
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 0;
-  max-width: 100%;
-  text-transform: none;
-  color: #4d99d8;
-  padding-left: inherit;
+
+@media (max-width: 799px) {
+  .up-position{
+    font-size: 10px;
+    top: 5%;
+  }
+
+  .middle-position{
+    top: 20%;
+  }
+
+  .centered-text h1 {
+    font-size: 3em;
+  }
+
+  .invite {
+    font-size: 12px;
+  }
+
+  .date{
+    font-size: 15px;
+  }
+
+  .text-home{
+    font-size: 12px;
+  }
+
+  .img-menu {
+    max-width: 65px;
+  }
+
+  .container {
+    top: 45%;
+  }
+
+  .contagem {
+    margin-top: 0.5rem;
+  }
+
+  .item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .valor {
+    font-size: 15px;
+  }
+
+  .unidade {
+    font-size: 8px;
+  }
 }
 
-.ltsPresente .imgPresente{
-  margin-top: 100px;
-  width: 45%;
+@media (max-width: 500px) {
+  .up-position{
+    font-size: 8px;
+    top: 5%;
+  }
+
+  .middle-position{
+    top: 20%;
+  }
+
+  .centered-text h1 {
+    font-size: 1.5em;
+  }
+
+  .invite {
+    font-size: 8px;
+  }
+
+  .date{
+    font-size: 12px;
+  }
+  .container {
+    top: 50%;
+  }
 }
 
-.menuHome a{
-  color: currentColor;
-  text-decoration: none;
-}
-
-.menuHome .textHomeP{
-  font-weight: bold;
-  font-size: 22px;
-  margin-top: 36px;
-  line-height: 0;
-  max-width: 100%;
-  text-transform: none;
-  color: #4d99d8;
-}
-
-.frase-com-linhas {
-  text-transform: none;
-  font-size: 36px;
-  font-family: 'Raleway', sans-serif;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-  display: inline-block;
-  padding: 26px;
-  margin-bottom: 50px;
-}
-
+/*Modal Igreja*/
 .modalF button{
   margin: 2px;
 }
 
-/* // show it on devices with max of 767 px and lower */
-
-@media (max-width: 767px) {
-  .hidden-mobile {
-    display: none;
-  }
-
-  .home .banner-direita {
-    width: 30%; /* Ajuste conforme necessário */
-    height: 100%; /* Usando 100% para cobrir a altura do elemento pai */
-    position: absolute;
-    top: 0;
-    background-image: url(../../../assets/img/home/flor1.png);
-    background-repeat: no-repeat;
-    background-size: contain; /* Alterado de 'cover' para 'contain' */
-    background-position: top; /* Posiciona a imagem na parte inferior */
-  }
-
-  .centered-text h1 {
-    font-size: 95px;
-    color: #5893c4;
-    margin: 0;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .down-position{
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    transform: translate(-50%, -50%); /* Move a div para o centro */
-    z-index: 1; /* Define uma ordem de empilhamento superior (na frente das imagens) */
-  }
-
-  .frase-com-linhas {
-    font-size: 23px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-  }
-
-  .menuHome .imgMenu{
-    /* margin-top: 25px; */
-    width: 45%;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-  }
-
-  .ltsPresente .imgPresente{
-    /* margin-top: 25px; */
-    width: 100%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 20px;
-    line-height: 0; /* Altere o valor conforme necessário, 1 seria o valor normal */
-    max-width: 100%; /* Texto não ultrapassará a largura da caixa */
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .up-position {
-    /* color: #666c8b; */
-    color: #4d99d8;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-family: 'Raleway', sans-serif;
-    top: 10%;
-    z-index: 1;
-    font-weight: bold;
-    text-align: right;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .ltsPresente .imgPresente{
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1450px) {
-  .hidden-mobile {
-    display: none;
-  }
-
-  .home .banner-direita {
-    width: 20%;
-    height: 100%;
-    top: 0;
-    background-image: url(../../../assets/img/home/flor1.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .centered-text h1 {
-    font-size: 95px;
-    color: #5893c4;
-    margin: 0;
-  }
-
-  .down-position{
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: 'Raleway', sans-serif;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 0;
-  }
-
-  .frase-com-linhas {
-    text-transform: none;
-    font-size: 26px;
-    font-family: 'Raleway', sans-serif;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-    display: inline-block;
-    padding: 26px;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .menuHome .imgMenu{
-    margin-top: 15px;
-    width: 40%;
-  }
-
-  .ltsPresente {
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .ltsPresente .imgPresente{
-    margin-top: 15px;
-    width: 40%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 12px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .up-position {
-    color: #4d99d8;
-    text-transform: uppercase;
-    font-size: 15px;
-    font-family: 'Raleway', sans-serif;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    font-weight: bold;
-  }
-}
-
-
 .btn-waze{
   background-color: #05c8f7;
   border-color: #05c8f7;
-}
-
-.modalP{
-  padding-top: 20px;
-  text-align: center;
 }
 
 .place{
@@ -404,109 +335,4 @@
   border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
   border-bottom-right-radius: var(--bs-modal-inner-border-radius);
   border-bottom-left-radius: var(--bs-modal-inner-border-radius);
-}
-
-.rowPresentes{
-  padding: 10px;
-}
-
-.itensPadrinhos .imgPadrinhos{
-  width: 45%;
-  text-decoration: none;
-}
-
-.itensPadrinhos .textPadrinhos {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  color: #4d99d8;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.linkMenu{
-  text-decoration: none;
-}
-
-
-@media (max-width: 400px){
-  .home{
-    width: 30%;
-    height: 100%;
-  }
-
-  .up-position{
-    color: #4d99d8;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-family: 'Raleway', sans-serif;
-    top: 10%;
-    z-index: 1;
-    font-weight: bold;
-    text-align: right;
-  }
-
-  .centered-text h1 {
-    font-size: 70px;
-    color: #5893c4;
-    margin: 0;
-  }
-
-  .frase-com-linhas{
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-top: 67px;
-    padding: 20px;
-  }
-
-  .menuHome .imgMenu{
-    margin-top: 0;
-    width: 100%;
-  }
-
-  .menuHome .textHomeP{
-    font-weight: bold;
-    font-size: 12px;
-    margin-top: 20px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-  }
-
-  .home .banner-esquerda-inferior {
-    display: none;
-  }
-
-  .menuHome{
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 0;
-    max-width: 100%;
-    text-transform: none;
-    color: #4d99d8;
-    padding-left: inherit;
-    margin-top: 30px;
-  }
-
-  .place{
-    margin-bottom: 6px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-  }
-
-  .address{
-    padding: 0 12px 0 12px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 11px;
-  }
-
-  .modalF button{
-    margin: 2px;
-    width: 100%;
-  }
 }

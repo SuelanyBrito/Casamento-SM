@@ -7,13 +7,9 @@ import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MadrinhaComponent } from './pages/madrinha/madrinha.component';
-import { PadrinhoComponent } from './pages/padrinho/padrinho.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NgOptimizedImage } from '@angular/common';
-import { OptImageMadrinhasComponent } from './pages/opt-image-madrinhas/opt-image-madrinhas.component';
-import { OptImagePadrinhosComponent } from './pages/opt-image-padrinhos/opt-image-padrinhos.component';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento.component';
 
@@ -26,8 +22,6 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    MadrinhaComponent,
-    PadrinhoComponent,
     ImageGalleryComponent,
     ListaCasamentoComponent
   ],
@@ -36,8 +30,6 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
     ClipboardModule,
     AppRoutingModule,
     NgOptimizedImage,
-    OptImageMadrinhasComponent,
-    OptImagePadrinhosComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
