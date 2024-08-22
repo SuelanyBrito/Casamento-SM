@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Myfont';
+  src: url('assets/fonts/Better_Saturday.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacialfont';
+  src: url('assets/fonts/GlacialIndifference-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *
 {
   padding: 0;
