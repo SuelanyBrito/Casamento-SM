@@ -1,21 +1,22 @@
-.lista-casamento{
+.list-gifts{
   background-image: url(../../../assets/img/TEXTURE.png);
-  background-color: #eaefff;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-style: normal;
+  background-color: #f8fbca;
+  font-family: "Glacialfont", sans-serif;
 }
 
-.blocoFinal{
-  padding: 40px;
+.initial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.text-lista-casamento h1{
-  font-family: 'Imperial Script', cursive;
+h1{
+  font-family: 'Myfont', cursive;
   font-size: 80px;
   margin-top: 30px;
 }
 
-.comCarinho{
+.att{
   text-align: right;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 200;
@@ -24,25 +25,17 @@
   font-size: 17px;
 }
 
-.florAzulMeio{
-  width: 5%;
-  margin-bottom: 25px;
-}
-
-.texto{
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.agradecimento h5{
-  font-family: "Montserrat Alternates", sans-serif;
+h5{
+  font-family: "Glacialfont", sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #000;
   margin-top: 25px;
 }
 
+.list-general{
+  width: 40% !important;
+}
 
 .referenciaTexto{
   font-family: "Montserrat Alternates", sans-serif;
@@ -51,15 +44,6 @@
   color: #7f7f7f;;
   font-size: 20px;
   margin-top: 10px;
-}
-
-.comCarinho{
-  text-align: right;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-  color: #000;
-  font-size: 17px;
 }
 
 /* celular com tela grande */
@@ -166,26 +150,31 @@
 
 .card:nth-child(1) .circle,
 .card:nth-child(1) .content a {
-  background: #9acffae8;
+  background: #A0B179;
 }
 
 .card:nth-child(2) .circle,
 .card:nth-child(2) .content a {
-  background: #9acffae8;
+  background: #A0B179;
 }
 
 .card:nth-child(3) .circle,
 .card:nth-child(3) .content a {
-  background: #9acffae8;
+  background: #A0B179;
 }
 
 .card:nth-child(4) .circle,
 .card:nth-child(4) .content a {
-  background: #9acffae8;
+  background: #A0B179;
 }
 
 @media (max-width: 768px) {
-  .container .row {
+  .initial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container{
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,16 +1,15 @@
 .navbar-light .navbar-nav .nav-link.active-link{
-  color: rgb(114, 152, 223);
+  color: #636851;
   font-weight: bold;
 }
 
 .navbar{
-  background-color: #9acffa;
+  background-color: #A0B179;
   background-image: none;
 }
 
-
-
 .nav-link{
   color: #fff;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: 'Glacialfont', sans-serif;
+  font-size: 18px;
 }
