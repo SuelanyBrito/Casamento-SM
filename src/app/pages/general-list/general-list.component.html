@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="title">
+    <h1>Lista</h1>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Digite Seu Nome</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <p>Escolha um produto que deseja nos presentear: </p>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Produto</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let name of list">
+      <td>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+        </div>
+      </td>
+      <td>{{ name }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
+</div>
