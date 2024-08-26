@@ -33,6 +33,9 @@ h5{
   margin-top: 25px;
 }
 
+.list-general{
+  width: 40% !important;
+}
 
 .referenciaTexto{
   font-family: "Montserrat Alternates", sans-serif;
