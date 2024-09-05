@@ -1,0 +1,1 @@
+export { graphqlProvider } from './graphql.config'
