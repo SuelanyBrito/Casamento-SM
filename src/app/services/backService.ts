@@ -40,12 +40,14 @@ export class BackService {
               }
           }`,
     }).valueChanges.pipe(
-      map((result: any) => result.data.getList.results.map((item: any) => ({
-        id: item.id,
-        title: item.properties.titleProperty.title[0].plain_text,
-        number: item.properties.qtde.number,
-        check: item.properties.marcado.checkbox
-      })))
+      map((result: any) => result.data.getList.results
+        .map((item: any) => ({
+          id: item.id,
+          title: item.properties.titleProperty.title[0].plain_text,
+          number: item.properties.qtde.number,
+          check: item.properties.marcado.checkbox
+        }))
+      )
     );
   }
 }

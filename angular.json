@@ -18,7 +18,8 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "@apollo/client"
+              "@apollo/client",
+              "rehackt"
             ],
             "outputPath": "dist/weddingSM",
             "index": "src/index.html",
@@ -30,6 +31,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.css"
             ],
             "scripts": [],

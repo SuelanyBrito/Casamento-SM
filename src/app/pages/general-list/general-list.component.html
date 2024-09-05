@@ -10,31 +10,55 @@
     </div>
     <p>Escolha um produto que deseja nos presentear: </p>
   </div>
-  <div class="data-table">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Qtde</th>
-        <th scope="col">Produto</th>
-        <th scope="col">Status</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of list$ | async">
-        <td>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input">
-          </div>
-        </td>
-        <td>{{ item.number }}</td>
-        <td>{{ item.title }}</td>
-        <td>{{ item.check}}</td>
-      </tr>
-      </tbody>
-    </table>
+
+  <table mat-table [dataSource]="list || []" matSort class="mat-elevation-z8 test-table">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let item">
+        <mat-checkbox (change)="onSelectItem(item, $event)"></mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Quantidade Column -->
+    <ng-container matColumnDef="number" >
+      <mat-header-cell *matHeaderCellDef> Qtde </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.number }} </mat-cell>
+    </ng-container>
+
+    <!-- Produto Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.title }} </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <mat-header-row *matHeaderRowDef="['select', 'number', 'title']"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: ['select', 'number', 'title']"></mat-row>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+
+  <div class="quantity-input-container">
+    <div class="quantity-input" *ngFor="let selectedItem of selectedItems">
+      <label for="quantity-{{ selectedItem.item.id }}" class="form-label">Quantidade para {{ selectedItem.item.title }}:</label>
+      <select
+        id="quantity-{{ selectedItem.item.id }}"
+        [value]="selectedItem.quantity"
+        (change)="onQuantityChange(selectedItem.item, $event)"
+        class="form-select form-select-sm select-small"
+      >
+        <option *ngFor="let option of getQuantityOptions(selectedItem.item.number)" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
   </div>
+
+
   <div class="button">
-    <button type="button" class="btn btn-primary btn-lg btn-block">Enviar</button>
+    <button mat-raised-button color="primary">Enviar</button>
   </div>
 </div>
