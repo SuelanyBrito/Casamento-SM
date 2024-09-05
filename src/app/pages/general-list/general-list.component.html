@@ -15,17 +15,21 @@
       <thead>
       <tr>
         <th scope="col"></th>
+        <th scope="col">Qtde</th>
         <th scope="col">Produto</th>
+        <th scope="col">Status</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let name of list">
+      <tr *ngFor="let item of list$ | async">
         <td>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input">
           </div>
         </td>
-        <td>{{ name }}</td>
+        <td>{{ item.number }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.check}}</td>
       </tr>
       </tbody>
     </table>
