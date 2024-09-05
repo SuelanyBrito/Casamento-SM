@@ -12,6 +12,9 @@ import { GeneralListComponent } from './pages/general-list/general-list.componen
 import { NgOptimizedImage } from '@angular/common';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento.component';
+import { graphqlProvider } from 'src/libs';
+import { Apollo, ApolloModule } from 'apollo-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,13 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
     ClipboardModule,
     AppRoutingModule,
     NgOptimizedImage,
+    HttpClientModule,
+    ApolloModule,
   ],
-  providers: [],
+  providers: [
+    graphqlProvider,
+    Apollo
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

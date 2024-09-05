@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@apollo/client"
+            ],
             "outputPath": "dist/weddingSM",
             "index": "src/index.html",
             "main": "src/main.ts",
