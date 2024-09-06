@@ -1,17 +1,38 @@
 .thanks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    font-family: "Glacialfont", sans-serif;
-    padding-bottom: 2rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Glacialfont", sans-serif;
+  padding-bottom: 2rem;
+  height: 100vh; /* Ocupa toda a altura da tela */
+}
 
-.msg {
-    margin-top: 10em;
+.thanks .banner-left-inferior {
+  width: 40%;
+  height: 50%;
+  background-image: url(../../../assets/img/home/florT2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-position: bottom;
+}
+
+.banner-right {
+  width: 35%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url(../../../assets/img/home/florT.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
 }
 
 .assinatura{
-    font-family: 'Myfont', 'sans-serif';
+  margin-top: 10rem;
+  font-family: 'Myfont', 'sans-serif';
 }

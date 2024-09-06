@@ -2,13 +2,16 @@
 <div class="container">
   <div class="title">
     <h1>Lista</h1>
-    <form class="input-form">
+    <form class="input-form" [formGroup]="form">
       <mat-form-field class="full-width">
         <mat-label>Digite Seu Nome</mat-label>
-        <input matInput placeholder="Digite seu nome" [(ngModel)]="name_usuario" (change)="nameUpdate($event)">
+        <input matInput formControlName="name_user" placeholder="Digite seu nome" required >
+        <mat-error *ngIf="form.get('name_user')?.hasError('required')">
+          O nome é obrigatório
+        </mat-error>
       </mat-form-field>
     </form>
-   
+
     <p>Escolha um produto que deseja nos presentear: </p>
   </div>
 
@@ -47,7 +50,7 @@
     <div class="quantity-input" *ngFor="let selectedItem of selectedItems">
       <mat-label>Quantidade para {{ selectedItem.item.title }}:</mat-label>
       <mat-form-field>
-        <mat-select class="mat-select-qtde" [(ngModel)]="selectedItem.quantity" (selectionChange)="onQuantityChange(selectedItem.item, $event)">
+        <mat-select class="mat-select-qtde" [(ngModel)]="selectedItem.quantity" (selectionChange)="onQuantityChange(selectedItem.item, $event)" required>
           <mat-option *ngFor="let option of getQuantityOptions(selectedItem.item.number)" [value]="option">
             {{ option }}
           </mat-option>

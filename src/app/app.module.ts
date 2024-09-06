@@ -15,7 +15,7 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
 import { graphqlProvider } from 'src/libs';
 import { Apollo, ApolloModule } from 'apollo-angular';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
@@ -54,7 +54,8 @@ import {MatInputModule} from "@angular/material/input"
     MatPaginator,
     MatSort,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [
     graphqlProvider,

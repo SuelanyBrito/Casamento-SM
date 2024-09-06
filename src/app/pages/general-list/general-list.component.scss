@@ -145,14 +145,6 @@ mat-paginator {
 
   table[mat-table] {
     min-width: auto !important;
-    width: 70% !important;
-  }
-}
-
-@media (max-width: 400px) {
-
-  table[mat-table] {
-    min-width: auto !important;
     width: 100% !important;
   }
 }

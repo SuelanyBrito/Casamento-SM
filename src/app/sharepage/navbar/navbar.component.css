@@ -4,12 +4,14 @@
 }
 
 .navbar{
-  background-color: #A0B179;
-  background-image: none;
-}
+  background:
+    linear-gradient(to left, rgb(160, 177, 121), rgb(200, 204, 149)), /* Gradiente */
+    url('/assets/img/TEXTURE.png'); /* Caminho correto para a imagem */
+  background-blend-mode: overlay; /* Combina o gradiente e a textura */}
 
 .nav-link{
-  color: #fff;
+  color: white;
   font-family: 'Glacialfont', sans-serif;
   font-size: 18px;
+  font-weight: bold;
 }

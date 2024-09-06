@@ -46,7 +46,7 @@ export class BackService {
           }`,
     }).valueChanges.pipe(
       map((result: any) => result.data.getList.results
-      .filter((item: any) => item.properties.qtde.number > 0) 
+      .filter((item: any) => item.properties.qtde.number > 0)
         .map((item: any) => ({
           id: item.id,
           title: item.properties.titleProperty.title[0].plain_text,
@@ -57,23 +57,23 @@ export class BackService {
     );
   }
 
-  update(item: SelectedItem, name_usuario: string): void {
-    console.log(name_usuario);
+  update(item: SelectedItem, name_user: string): void {
+    console.log(name_user);
     this.apollo
       .watchQuery({
         query: gql`
           query MyQuery($id: String!, $person: String!, $quantity: Int!) {
-            mark(id: $id, person: $person, quantity: $quantity) 
+            mark(id: $id, person: $person, quantity: $quantity)
           }
         `,
         variables: {
-          id: item.item.id, 
-          person: name_usuario,
-          quantity: item.item.number - item.quantity, 
+          id: item.item.id,
+          person: name_user,
+          quantity: item.item.number - item.quantity,
         },
       })
       .valueChanges.subscribe((result: any) => {
         console.log(result.data);
       });
-  }  
+  }
 }
