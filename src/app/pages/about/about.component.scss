@@ -9,9 +9,18 @@
   height: 100vh; /* Ocupa toda a altura da tela */
 }
 
-.thanks .banner-left-inferior {
-  width: 40%;
-  height: 50%;
+button{
+  margin-top: 4rem;
+}
+
+.mat-mdc-fab.mat-accent  {
+  color: white;
+  background-color: #193b08;
+}
+
+.banner-left-inferior {
+  width: 30%;
+  height: 100%;
   background-image: url(../../../assets/img/home/florT2.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -33,6 +42,10 @@
 }
 
 .assinatura{
-  margin-top: 10rem;
+  margin-top: 5rem;
   font-family: 'Myfont', 'sans-serif';
+}
+
+.msg{
+  margin-top: 2rem;
 }

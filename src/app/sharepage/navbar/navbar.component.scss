@@ -4,9 +4,7 @@
 }
 
 .navbar{
-  background:
-    linear-gradient(to left, rgb(160, 177, 121), rgb(200, 204, 149)), /* Gradiente */
-    url('/assets/img/TEXTURE.png'); /* Caminho correto para a imagem */
+  background:linear-gradient(rgb(160, 177, 121), rgb(200, 204, 149));
   background-blend-mode: overlay; /* Combina o gradiente e a textura */}
 
 .nav-link{

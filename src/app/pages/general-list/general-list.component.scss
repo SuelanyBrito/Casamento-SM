@@ -8,7 +8,6 @@
   padding-bottom: 2rem;
 }
 
-
 .mat-column-number {
   flex: 0 0 100px !important;
   justify-content: center;
@@ -75,12 +74,16 @@ table[mat-table] {
   }
 }
 
-table[mat-table] tbody tr td {
-  color: var(--gray-medium);
-}
 
 .mat-mdc-table {
-  background: transparent !important;
+ // background: rgb(240,183,161);
+ // background: -moz-linear-gradient(-45deg,  rgba(240,183,161,1) 0%, rgba(140,51,16,1) 50%, rgba(117,34,1,1) 51%, rgba(191,110,78,1) 100%);
+ // background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(240,183,161,1)), color-stop(50%,rgba(140,51,16,1)), color-stop(51%,rgba(117,34,1,1)), color-stop(100%,rgba(191,110,78,1)));
+ // background: -webkit-linear-gradient(-45deg,  rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%);
+ // background: -o-linear-gradient(-45deg,  rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%);
+  //background: -ms-linear-gradient(-45deg,  rgba(240,183,161,1) 0%,rgba(140,51,16,1) 50%,rgba(117,34,1,1) 51%,rgba(191,110,78,1) 100%);
+  background: linear-gradient(rgb(160, 177, 121), rgb(200, 204, 149));
+
 }
 
 .g-table-disabled-row {
