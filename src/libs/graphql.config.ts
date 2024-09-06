@@ -10,7 +10,7 @@ export const graphqlProvider: Provider = {
     ): ApolloClientOptions<unknown> => ({
         link: ApolloLink.from([
             httpLink.create({
-                uri:"https://backcasamentosm.onrender.com/graphiql"
+                uri:"https://backcasamentosm.onrender.com/graphql"
             })
         ]),
         cache: new InMemoryCache(),

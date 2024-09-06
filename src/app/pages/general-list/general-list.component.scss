@@ -8,15 +8,135 @@
   padding-bottom: 2rem;
 }
 
-.data-table {
-  height: 500px;
-  overflow-y: auto;
+
+.mat-column-number {
+  flex: 0 0 100px !important;
+  justify-content: center;
+  white-space: unset !important;
+}
+
+.mat-column-title {
+  flex: 1 0 100px !important;
+  white-space: unset !important;
+}
+
+.mat-column-select {
+  flex: 0 0 60px !important;
+  justify-content: center;
+}
+
+table[mat-table] {
+  min-width: auto !important;
+  width: 65% !important;
+
+  thead {
+    .mat-header-row {
+      width: 10px;
+    }
+    tr {
+      th {
+        @apply text-sm text-wt-gray-dark;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        @apply text-wt-gray-medium text-base;
+        border-bottom: 1px solid var(--table-border);
+
+        &:first-child {
+          @apply pl-0 sm:pl-4;
+        }
+      }
+    }
+  }
+
+  .mat-mdc-row {
+    transition: All 0.3s ease-out;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 30px;
+
+    @screen md {
+      height: 30px;
+    }
+
+    &:hover {
+      background-color: var(--table-hover);
+    }
+  }
+
+  th.mat-mdc-header-cell:last-of-type,
+  td.mat-mdc-cell:last-of-type,
+  td.mat-mdc-footer-cell:last-of-type {
+    padding-right: 8px !important;
+  }
+}
+
+table[mat-table] tbody tr td {
+  color: var(--gray-medium);
+}
+
+.mat-mdc-table {
+  background: transparent !important;
+}
+
+.g-table-disabled-row {
+  opacity: 0.55 !important;
+  pointer-events: none !important;
+}
+
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  padding: 0 !important;
+
+  @screen sm {
+    padding: 0 16px 0 16px !important;
+  }
+}
+
+.mdc-data-table__cell {
+  color: var(--gray-light) !important;
+
+}
+
+.mdc-data-table__header-cell {
+  color: var(--gray-medium) !important;
+
+}
+
+mat-header-row{
+  min-height: 32px;
+}
+
+mat-row{
+  min-height: 32px;
 }
 
 .title {
   padding-top: 2rem;
 }
 
-.button {
-  padding-top: 20px;
+mat-paginator {
+  background: transparent;
+}
+
+.quantity-input-container {
+  margin-top: 2rem;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.form-label {
+  margin-right: 0.5rem;
+}
+
+.select-small {
+  width: 100px; /* Adjust the width as needed */
 }

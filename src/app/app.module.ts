@@ -15,6 +15,16 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
 import { graphqlProvider } from 'src/libs';
 import { Apollo, ApolloModule } from 'apollo-angular';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCheckbox} from "@angular/material/checkbox";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input"
 
 @NgModule({
   declarations: [
@@ -35,6 +45,16 @@ import { HttpClientModule } from '@angular/common/http';
     NgOptimizedImage,
     HttpClientModule,
     ApolloModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSelectModule,
+    MatCheckbox,
+    MatPaginator,
+    MatSort,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     graphqlProvider,
