@@ -40,7 +40,8 @@
 
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" [showFirstLastButtons]="true"
+  [hidePageSize]="true"></mat-paginator>
 
   <div class="quantity-input-container">
     <div class="quantity-input" *ngFor="let selectedItem of selectedItems">

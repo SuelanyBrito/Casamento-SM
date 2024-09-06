@@ -77,7 +77,7 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
     const updateObservables = this.selectedItems.map(itemX => 
       this.backService.update(itemX, this.name_usuario)
     );
-    this.router.navigate(['/']);    
+    this.router.navigate(['/thanks']);    
   }
 
   loadList() {

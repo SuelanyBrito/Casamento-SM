@@ -9,7 +9,7 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'menu', component:MenuComponent},
-  {path:'about', component:AboutComponent},
+  {path:'thanks', component:AboutComponent},
   {path:'general-list', component:GeneralListComponent},
   {path:'lista-casamento', component:ListaCasamentoComponent}
 ];
