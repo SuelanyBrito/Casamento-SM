@@ -23,6 +23,8 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from "@angular/material/input"
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import {MatSort} from "@angular/material/sort";
     MatSelectModule,
     MatCheckbox,
     MatPaginator,
-    MatSort
+    MatSort,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     graphqlProvider,

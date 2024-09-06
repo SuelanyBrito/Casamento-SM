@@ -10,6 +10,11 @@ interface Item {
   check: boolean;
 }
 
+interface SelectedItem {
+  item: Item;
+  quantity: number;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -50,4 +55,24 @@ export class BackService {
       )
     );
   }
+
+  update(item: SelectedItem, name_usuario: string): void {
+    console.log(name_usuario);
+    this.apollo
+      .watchQuery({
+        query: gql`
+          query MyQuery($id: String!, $person: String!, $quantity: Int!) {
+            mark(id: $id, person: $person, quantity: $quantity) 
+          }
+        `,
+        variables: {
+          id: item.item.id, 
+          person: name_usuario,
+          quantity: item.item.number - item.quantity, 
+        },
+      })
+      .valueChanges.subscribe((result: any) => {
+        console.log(result.data);
+      });
+  }  
 }

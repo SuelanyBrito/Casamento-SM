@@ -2,12 +2,13 @@
 <div class="container">
   <div class="title">
     <h1>Lista</h1>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Digite Seu Nome</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
+    <form class="input-form">
+      <mat-form-field class="full-width">
+        <mat-label>Digite Seu Nome</mat-label>
+        <input matInput placeholder="Digite seu nome" [(ngModel)]="name_usuario" (change)="nameUpdate($event)">
+      </mat-form-field>
+    </form>
+   
     <p>Escolha um produto que deseja nos presentear: </p>
   </div>
 
@@ -43,22 +44,17 @@
 
   <div class="quantity-input-container">
     <div class="quantity-input" *ngFor="let selectedItem of selectedItems">
-      <label for="quantity-{{ selectedItem.item.id }}" class="form-label">Quantidade para {{ selectedItem.item.title }}:</label>
-      <select
-        id="quantity-{{ selectedItem.item.id }}"
-        [value]="selectedItem.quantity"
-        (change)="onQuantityChange(selectedItem.item, $event)"
-        class="form-select form-select-sm select-small"
-      >
-        <option *ngFor="let option of getQuantityOptions(selectedItem.item.number)" [value]="option">
-          {{ option }}
-        </option>
-      </select>
+      <mat-label>Quantidade para {{ selectedItem.item.title }}:</mat-label>
+      <mat-form-field>
+        <mat-select class="mat-select-qtde" [(ngModel)]="selectedItem.quantity" (selectionChange)="onQuantityChange(selectedItem.item, $event)">
+          <mat-option *ngFor="let option of getQuantityOptions(selectedItem.item.number)" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
 
+  <button mat-raised-button color="primary" (click)="enviar()">Enviar</button>
 
-  <div class="button">
-    <button mat-raised-button color="primary">Enviar</button>
-  </div>
 </div>
