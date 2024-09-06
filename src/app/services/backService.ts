@@ -46,6 +46,7 @@ export class BackService {
           }`,
     }).valueChanges.pipe(
       map((result: any) => result.data.getList.results
+      .filter((item: any) => item.properties.qtde.number > 0) 
         .map((item: any) => ({
           id: item.id,
           title: item.properties.titleProperty.title[0].plain_text,
