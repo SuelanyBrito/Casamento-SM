@@ -1,0 +1,35 @@
+/* Aplicando uma sombra mais suave e bordas arredondadas */
+ mat-mdc-dialog-inner-container {
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-family: "Glacialfont", sans-serif;
+  padding: 2rem;
+}
+
+/* Estilizando o conteúdo do diálogo */
+p { 
+  color: black;
+  text-align: center;
+  font-family: "Glacialfont", sans-serif;
+  padding: 1rem;
+}
+
+/* Ações do diálogo (botões) */
+.button {
+  display: flex;
+  justify-content: center !important; /* Centralizando o botão */
+  padding: 1rem;
+}
+
+.mat-mdc-unelevated-button:not(:disabled) {
+  color: white;
+  background-color: black;
+}

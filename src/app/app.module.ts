@@ -4,7 +4,6 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
-import { FooterComponent } from './sharepage/footer/footer.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -25,16 +24,17 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input"
+import { DialogComponent } from './sharepage/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    DialogComponent,
     MenuComponent,
     HomeComponent,
     AboutComponent,
     GeneralListComponent,
-    FooterComponent,
     ImageGalleryComponent,
     ListaCasamentoComponent
   ],

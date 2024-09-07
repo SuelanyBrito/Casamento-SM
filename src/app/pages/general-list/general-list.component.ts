@@ -6,8 +6,9 @@ import {MatTableDataSource} from "@angular/material/table";
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
-import {MatFormFieldControl} from "@angular/material/form-field";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { DialogComponent } from 'src/app/sharepage/dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface Item {
   id: string;
@@ -35,9 +36,9 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
 
   form: FormGroup;
   qtde_temp: number = 0;
-  formSubmitted = false;
+  invalid_submit = true;
 
-  constructor(private fb: FormBuilder, private backService: BackService, private router: Router) {
+  constructor(private fb: FormBuilder, private backService: BackService, private router: Router, public dialog: MatDialog) {
     this.form = this.fb.group({
       name_user: ['', Validators.required],
     });
@@ -77,26 +78,26 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   }
 
   enviar() {
-    if (this.form.invalid) {
-      return; // Interrompe o envio se o formulário for inválido
+    if (this.form.invalid || this.selectedItems.length === 0) {
+      this.openDialog();
+    }else{
+      const itemInitial: Item = {
+        id: '',
+        title: '',
+        number: 0,
+        check: false
+      };
+  
+      const selected: SelectedItem = {
+        item: itemInitial,
+        quantity: 0
+      }
+      this.backService.update(selected, '')
+      this.selectedItems.map(itemX =>
+        this.backService.update(itemX, this.form.get('name_user')?.value)
+      );
+      this.router.navigate(['/thanks']);
     }
-    this.formSubmitted = true;
-    const itemInitial: Item = {
-      id: '',
-      title: '',
-      number: 0,
-      check: false
-    };
-
-    const selected: SelectedItem = {
-      item: itemInitial,
-      quantity: 0
-    }
-    this.backService.update(selected, '')
-    this.selectedItems.map(itemX =>
-      this.backService.update(itemX, this.form.get('name_user')?.value)
-    );
-    this.router.navigate(['/thanks']);
   }
 
   loadList() {
@@ -107,4 +108,7 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
     });
   }
 
+  openDialog(): void {
+    this.dialog.open(DialogComponent);
+  }
 }
