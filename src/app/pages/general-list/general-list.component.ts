@@ -6,6 +6,9 @@ import {MatTableDataSource} from "@angular/material/table";
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { DialogComponent } from 'src/app/sharepage/dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 interface Item {
   id: string;
@@ -31,10 +34,15 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   public list!: MatTableDataSource<Item>;
   public selectedItems: SelectedItem[] = [];
 
-  name_usuario: string = "";
+  form: FormGroup;
   qtde_temp: number = 0;
+  invalid_submit = true;
 
-  constructor(private backService: BackService, private router: Router) { }
+  constructor(private fb: FormBuilder, private backService: BackService, private router: Router, public dialog: MatDialog) {
+    this.form = this.fb.group({
+      name_user: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
     this.loadList();
@@ -43,10 +51,6 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.list.paginator = this.paginator;
     this.list.sort = this.sort;
-  }
-
-  nameUpdate(event: any) {
-    this.name_usuario = event.target.value;
   }
 
   onSelectItem(item: any, event: MatCheckboxChange) {
@@ -60,11 +64,11 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   }
 
   onQuantityChange(item: Item, event: MatSelectChange): void {
-    const quantity = event.value; 
+    const quantity = event.value;
     const selectedItem = this.selectedItems.find(selectedItem => selectedItem.item.id === item.id);
-  
+
     if (selectedItem) {
-      selectedItem.quantity = quantity; 
+      selectedItem.quantity = quantity;
       console.log(`Quantidade atualizada para ${selectedItem.item.title}: ${selectedItem.quantity}`);
     }
   }
@@ -74,10 +78,26 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   }
 
   enviar() {
-    const updateObservables = this.selectedItems.map(itemX => 
-      this.backService.update(itemX, this.name_usuario)
-    );
-    this.router.navigate(['/thanks']);    
+    if (this.form.invalid || this.selectedItems.length === 0) {
+      this.openDialog();
+    }else{
+      const itemInitial: Item = {
+        id: '',
+        title: '',
+        number: 0,
+        check: false
+      };
+  
+      const selected: SelectedItem = {
+        item: itemInitial,
+        quantity: 0
+      }
+      this.backService.update(selected, '')
+      this.selectedItems.map(itemX =>
+        this.backService.update(itemX, this.form.get('name_user')?.value)
+      );
+      this.router.navigate(['/thanks']);
+    }
   }
 
   loadList() {
@@ -87,5 +107,8 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
       this.list.sort = this.sort;
     });
   }
-  
+
+  openDialog(): void {
+    this.dialog.open(DialogComponent);
+  }
 }

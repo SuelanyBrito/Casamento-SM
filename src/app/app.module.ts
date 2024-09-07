@@ -4,7 +4,6 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
-import { FooterComponent } from './sharepage/footer/footer.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -15,7 +14,7 @@ import { ListaCasamentoComponent } from './pages/lista-casamento/lista-casamento
 import { graphqlProvider } from 'src/libs';
 import { Apollo, ApolloModule } from 'apollo-angular';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
@@ -25,16 +24,17 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input"
+import { DialogComponent } from './sharepage/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    DialogComponent,
     MenuComponent,
     HomeComponent,
     AboutComponent,
     GeneralListComponent,
-    FooterComponent,
     ImageGalleryComponent,
     ListaCasamentoComponent
   ],
@@ -54,7 +54,8 @@ import {MatInputModule} from "@angular/material/input"
     MatPaginator,
     MatSort,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [
     graphqlProvider,

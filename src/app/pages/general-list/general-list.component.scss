@@ -8,7 +8,6 @@
   padding-bottom: 2rem;
 }
 
-
 .mat-column-number {
   flex: 0 0 100px !important;
   justify-content: center;
@@ -75,12 +74,9 @@ table[mat-table] {
   }
 }
 
-table[mat-table] tbody tr td {
-  color: var(--gray-medium);
-}
-
 .mat-mdc-table {
-  background: transparent !important;
+  background: rgb(200, 204, 149);
+
 }
 
 .g-table-disabled-row {
@@ -141,15 +137,12 @@ mat-paginator {
   width: 100px; /* Adjust the width as needed */
 }
 
-@media (max-width: 600px) {
-
-  table[mat-table] {
-    min-width: auto !important;
-    width: 70% !important;
-  }
+.mat-mdc-fab.mat-accent  {
+  color: white;
+  background-color: #193b08;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 
   table[mat-table] {
     min-width: auto !important;

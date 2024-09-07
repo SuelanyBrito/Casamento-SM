@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'menu', component:MenuComponent},
   {path:'thanks', component:AboutComponent},
   {path:'general-list', component:GeneralListComponent},
-  {path:'lista-casamento', component:ListaCasamentoComponent}
+  {path:'lists', component:ListaCasamentoComponent}
 ];
 
 @NgModule({
