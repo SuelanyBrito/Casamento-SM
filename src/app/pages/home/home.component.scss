@@ -76,6 +76,19 @@
   padding: 30px;
 }
 
+.img-menu {
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu-item:hover .img-menu {
+  transform: scale(1.2);
+}
+
+.menu-item:hover .card-text {
+  color: #000000;
+}
+
+
 a{
   text-decoration: none;
 }
