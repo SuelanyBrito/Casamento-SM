@@ -1,5 +1,5 @@
 .home .banner-right {
-  width: 35%;
+  width: 30%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -10,7 +10,7 @@
 }
 
 .home .banner-left-inferior {
-  width: 30%;
+  width: 40%;
   height: 100%;
   background-image: url(../../../assets/img/home/florT2.png);
   background-repeat: no-repeat;
@@ -33,17 +33,13 @@
 }
 
 .bible-text {
-  display: flex;
   padding: 2.5rem;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   line-height: 1.2;
   font-size: 20px;
 }
 
 .middle-position{
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
 .middle-position h1 {
@@ -84,11 +80,6 @@
   transform: scale(1.2);
 }
 
-.menu-item:hover .card-text {
-  color: #000000;
-}
-
-
 a{
   text-decoration: none;
 }
@@ -97,9 +88,7 @@ a{
   font-size: 20px;
   margin-top: 20px;
   line-height: 0;
-  max-width: 100%;
   color: #614124;
-  font-family: 'Glacialfont', sans-serif;
 }
 
 .img-menu {
@@ -110,20 +99,19 @@ a{
 .contagem {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .item {
+  width: 90px;
+  height: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(0,0,0,0.1);
   border: 5px solid rgba(255,255,255,0.3);
-  width: 100px;
-  height: 100px;
-  border-radius: 99px;
-  margin: 5px;
+  margin: 12px;
 }
 
 .valor {
@@ -140,14 +128,6 @@ a{
 
 
 @media (min-width: 800px) and (max-width: 1330px) {
-  .home .banner-right {
-    width: 25%;
-  }
-
-  .home .banner-left-inferior {
-    width: 20%;
-  }
-
   .bible-text{
     font-size: 12px;
   }
@@ -168,21 +148,24 @@ a{
     max-width: 90px;
   }
 
-  .contagem {
-    margin-top: 2rem;
-  }
-
-  .item {
-    width: 90px;
-    height: 90px;
-  }
-
   .valor {
     font-size: 25px;
   }
 }
 
 @media (max-width: 799px) {
+  .home .banner-right {
+    width: 40%;
+  }
+
+  .home .banner-left-inferior {
+    width: 65%;
+  }
+
+  .contagem {
+    margin-top: 1rem;
+  }
+
   .bible-text{
     font-size: 12px;
   }
@@ -222,6 +205,10 @@ a{
 }
 
 @media (max-width: 500px) {
+  .home .banner-left-inferior {
+    width: 100%;
+  }
+
   .up-position{
     font-size: 8px;
   }

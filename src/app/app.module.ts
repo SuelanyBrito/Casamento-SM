@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
+import { ThanksComponent } from './pages/about/thanks.component';
 import { GeneralListComponent } from './pages/general-list/general-list.component';
 import { NgOptimizedImage } from '@angular/common';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
@@ -25,6 +25,7 @@ import {MatSort} from "@angular/material/sort";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input"
 import { DialogComponent } from './sharepage/dialog/dialog.component';
+import {MatCard} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -33,30 +34,31 @@ import { DialogComponent } from './sharepage/dialog/dialog.component';
     DialogComponent,
     MenuComponent,
     HomeComponent,
-    AboutComponent,
+    ThanksComponent,
     GeneralListComponent,
     ImageGalleryComponent,
     ListaCasamentoComponent
   ],
-  imports: [
-    BrowserModule,
-    ClipboardModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    HttpClientModule,
-    ApolloModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatTableModule,
-    MatSelectModule,
-    MatCheckbox,
-    MatPaginator,
-    MatSort,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        ClipboardModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        HttpClientModule,
+        ApolloModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatTableModule,
+        MatSelectModule,
+        MatCheckbox,
+        MatPaginator,
+        MatSort,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatCard
+    ],
   providers: [
     graphqlProvider,
     Apollo
