@@ -1,10 +1,26 @@
 .navbar{
-  background:linear-gradient(rgb(160, 177, 121), rgb(200, 204, 149));
-  background-blend-mode: overlay; /* Combina o gradiente e a textura */}
+  background: transparent;
+}
 
 .nav-link{
-  color: #614124;
+  color: #956d48;
   font-family: 'Glacialfont', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #152101; /* Cor de destaque ao passar o mouse */
+}
+
+.nav-item {
+  padding-right: 2rem;
+}
+
+.navbar-brand {
+  font-family: 'Myfont', 'sans-serif';
+}
+
+.navbar-light .navbar-nav .nav-link.active-link{
+  color: rgba(10, 60, 19, 0.5);
 }

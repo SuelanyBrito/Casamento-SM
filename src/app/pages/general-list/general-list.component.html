@@ -1,7 +1,26 @@
 <app-navbar></app-navbar>
+
 <div class="container">
+
+  <div class="initial">
+    <div class="title">
+      <h1 class="mobile-text">Lista de Presentes</h1>
+    </div>
+    <div class="text">
+      <h5>Aqui você encontra nossa lista de presentes e pode escolher onde comprar cada item.</h5>
+      <h5> Marque o que deseja nos presentear para termos o controle </h5>
+    </div>
+    <div class="color-options" style="display: flex; justify-content: center; align-items: center;">
+      <p style="margin-top: 1rem; color: red;">Nossas preferências de cores para os presentes: Branco/Preto</p>
+      <div class="color-circle" [ngStyle]="{'background-color': 'white'}"></div>
+      <div class="color-circle" [ngStyle]="{'background-color': 'black'}"></div>
+    </div>
+    <div>
+    
+    </div>
+  </div>
+
   <div class="title">
-    <h1>Lista</h1>
     <form class="input-form" [formGroup]="form">
       <mat-form-field class="full-width">
         <mat-label>Digite Seu Nome</mat-label>

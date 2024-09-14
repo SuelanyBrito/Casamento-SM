@@ -11,14 +11,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private _clipboardService: ClipboardService) { }
 
-  mostrarModalMadrinhas() {
-    window.location.href = '/madrinhas';
-  }
-
-  mostrarModalPadrinhos() {
-    window.location.href = '/padrinhos';
-  }
-
   ngOnInit(): void {
   }
 

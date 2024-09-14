@@ -23,9 +23,23 @@
   --first-color: blueviolet;
 }
 
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(assets/img/TEXTURE.png);
+  background-image: url(assets/img/test/6.png), url(assets/img/test/7.png); /* Segunda imagem adicionada */
   background-color: #f8fbca;
+  background-size: cover, contain; /* Primeira imagem cobre, segunda se ajusta */
+  background-position: center top, center bottom; /* Posiciona a primeira imagem no topo e a segunda no fundo */
+  background-repeat: no-repeat, repeat-y; /* A primeira imagem não se repete, a segunda repete verticalmente */
+  background-attachment: fixed;
+  min-height: 100vh; /* Garante que o corpo ocupe ao menos 100% da altura da tela */
+}
 
+
+@media (max-width: 700px) {
+  body {
+    background-color: #f8fbca; /* Certifique-se de que a cor de fundo esteja visível */
+    background-size: cover; /* Ou 'contain' dependendo do efeito desejado */
+    background-position: center;
+    background-image: url(assets/img/phone_texture3.png);
+  }
 }
