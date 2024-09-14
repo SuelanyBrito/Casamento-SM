@@ -1,12 +1,16 @@
 .navbar{
-  background: white;
+  background: transparent;
 }
 
 .nav-link{
   color: #956d48;
   font-family: 'Glacialfont', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #152101; /* Cor de destaque ao passar o mouse */
 }
 
 .nav-item {

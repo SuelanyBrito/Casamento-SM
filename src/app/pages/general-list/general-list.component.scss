@@ -142,6 +142,19 @@ mat-paginator {
   background-color: #193b08;
 }
 
+.color-options {
+  display: flex;
+  gap: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
 
   table[mat-table] {

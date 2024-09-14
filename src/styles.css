@@ -30,6 +30,7 @@ body {
   background-size: cover, contain; /* Primeira imagem cobre, segunda se ajusta */
   background-position: center top, center bottom; /* Posiciona a primeira imagem no topo e a segunda no fundo */
   background-repeat: no-repeat, repeat-y; /* A primeira imagem não se repete, a segunda repete verticalmente */
+  background-attachment: fixed;
   min-height: 100vh; /* Garante que o corpo ocupe ao menos 100% da altura da tela */
 }
 
