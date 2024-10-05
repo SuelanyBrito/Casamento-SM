@@ -16,6 +16,7 @@ import { Apollo, ApolloModule } from 'apollo-angular';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
 import {MatSelectModule} from "@angular/material/select";
@@ -57,7 +58,8 @@ import {MatCard} from "@angular/material/card";
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
-        MatCard
+        MatCard,
+        MatProgressSpinnerModule
     ],
   providers: [
     graphqlProvider,

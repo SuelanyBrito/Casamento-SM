@@ -11,9 +11,10 @@
       <h5> Marque o que deseja nos presentear para termos o controle </h5>
     </div>
     <div class="color-options" style="display: flex; justify-content: center; align-items: center;">
-      <p style="margin-top: 1rem; color: red;">Nossas preferências de cores para os presentes: Branco/Preto</p>
-      <div class="color-circle" [ngStyle]="{'background-color': 'white'}"></div>
+      <p style="margin-top: 1rem; color: red;">Nossas preferências de cores para os presentes: Cinza, Preto e Azul</p>
+      <div class="color-circle" [ngStyle]="{'background-color': '#474A51'}"></div>
       <div class="color-circle" [ngStyle]="{'background-color': 'black'}"></div>
+      <div class="color-circle" [ngStyle]="{'background-color': '#90B1DB'}"></div>
     </div>
     <div>
     
@@ -35,7 +36,6 @@
   </div>
 
   <table mat-table [dataSource]="list || []" matSort class="mat-elevation-z8 test-table">
-
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -61,8 +61,9 @@
     <mat-row *matRowDef="let row; columns: ['select', 'number', 'title']"></mat-row>
 
   </table>
+  <mat-spinner *ngIf="!list"></mat-spinner>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25]" [showFirstLastButtons]="true"
+  <mat-paginator [pageSizeOptions]="[10, 15, 25]" [showFirstLastButtons]="true"
   [hidePageSize]="true"></mat-paginator>
 
   <div class="quantity-input-container">
