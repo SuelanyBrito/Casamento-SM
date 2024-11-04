@@ -57,6 +57,19 @@ export class BackService {
     );
   }
 
+  getPix() {
+    return this.apollo.watchQuery({
+      query: gql`
+            query GetPix {
+              getPix
+
+          }`,
+    }).valueChanges.pipe(
+      map((result: any) => result.data.getPix)
+
+    );
+  }
+
   update(item: SelectedItem, name_user: string): void {
     console.log(name_user);
     this.apollo
