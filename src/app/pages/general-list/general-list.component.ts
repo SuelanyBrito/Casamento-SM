@@ -2,7 +2,6 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import { BackService } from 'src/app/services/backService';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableDataSource} from "@angular/material/table";
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatSelectChange } from '@angular/material/select';
@@ -88,7 +87,7 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
         number: 0,
         check: false
       };
-  
+
       const selected: SelectedItem = {
         item: itemInitial,
         quantity: 0
@@ -105,6 +104,19 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
     this.backService.getList().subscribe((data: Item[]) => {
       this.list = new MatTableDataSource<Item>(data);
       this.list.paginator = this.paginator;
+      this.list.sort = this.sort;
+      this.list.sortingDataAccessor = (item, property) => {
+        switch (property) {
+          case 'title': return item.title;
+          case 'number': return item.number;
+          case 'id': return item.id;
+          case 'check': return item.check ? 1 : 0;
+          default: return '';
+        }
+      };
+
+      this.sort.active = 'title';
+      this.sort.direction = 'asc';
       this.list.sort = this.sort;
     });
   }
