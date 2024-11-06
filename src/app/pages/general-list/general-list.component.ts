@@ -45,6 +45,7 @@ export class GeneralListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.loadList();
   }
 

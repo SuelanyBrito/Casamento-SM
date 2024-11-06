@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BackService} from "../../services/backService";
 
 @Component({
@@ -6,10 +6,14 @@ import {BackService} from "../../services/backService";
   templateUrl: './lista-casamento.component.html',
   styleUrls: ['./lista-casamento.component.scss']
 })
-export class ListaCasamentoComponent {
+export class ListaCasamentoComponent implements OnInit {
 
 
   constructor(private backService: BackService){}
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
 
   copyPixKey() {
     this.backService.getPix().subscribe(data => {

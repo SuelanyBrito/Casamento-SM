@@ -142,7 +142,7 @@ mat-paginator {
   background-color: #193b08;
 }
 
-.color-options {
+.colors {
   display: flex;
   gap: 10px;
 }
@@ -162,8 +162,8 @@ mat-paginator {
     width: 100% !important;
   }
 
-  .color-circle {
-    width: 55px;
+  .colors {
+    margin-bottom: 2rem;
   }
 
   .title {
