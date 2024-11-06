@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ClipboardService } from 'ngx-clipboard'
 
 @Component({
   selector: 'app-home',
@@ -9,12 +7,13 @@ import { ClipboardService } from 'ngx-clipboard'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private _clipboardService: ClipboardService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
 interface ContagemRegressiva {
   dias: number;
   horas: number;

@@ -1,23 +1,60 @@
 <div class="home">
-  <div class="banner-right"></div>
   <div class="banner-left-inferior"></div>
-  <div class="general">
-    <div class="bible-text">
-      <p class="verse">
-      “Ame o Senhor, o seu Deus, de todo o seu coração, <br>
-      de toda a sua alma e de todas as suas forças. <br>
-      Que todas estas palavras que hoje lhe ordeno estejam em seu coração.“</p>
-      <p class="cap">Deuteronômio 6:5-6</p>
-    </div>
-    <div class="msg-center">
-      <div class="middle-position">
+
+  <mat-card class="bg-image-card">
+    <div class="overlay" style="display: flex">
+      <div class="content-center">
         <h1>Samuel e Mariana</h1>
         <p class="invite">Convidam para a cerimônia</p>
         <p class="date">08 Fevereiro, 2025 às 15:00</p>
       </div>
     </div>
+  </mat-card>
 
     <div class="container">
+
+      <ngb-carousel class="slider" [interval]="5000">
+
+        <ng-template  ngbSlide>
+          <div class="text" style="text-align: center">
+            <p class="verse">
+              “Ame o Senor, o seu Deus, de todo o seu coração, <br>
+              de toda a sua alma e de todas as suas forças. <br>
+              Que todas estas palavras que hoje lhe ordeno estejam em seu coração.“</p>
+            <p class="cap">Deuteronômio 6:5-6</p>
+          </div>
+        </ng-template>
+
+        <ng-template  ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img  src="../../../assets/img/casal/aliancas1.jpeg">
+          </div>
+        </ng-template>
+
+        <ng-template  ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img  src="../../../assets/img/casal/outra1.jpeg">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+
+      <div class="img-verse">
+        <div class="photo1"></div>
+
+        <mat-card class="photo-card">
+          <mat-card-content>
+            <p class="verse">
+              “Ame o Senhor, o seu Deus, de todo o seu coração, <br>
+              de toda a sua alma e de todas as suas forças. <br>
+              Que todas estas palavras que hoje lhe ordeno estejam em seu coração.“</p>
+            <p class="cap">Deuteronômio 6:5-6</p>
+          </mat-card-content>
+        </mat-card>
+
+        <div class="photo2"></div>
+      </div >
+
+
       <div class="menu-itens">
         <div class="menu-item">
           <a href="#" class="link-menu" data-bs-toggle="modal" data-bs-target="#igreja">
@@ -50,8 +87,8 @@
           <span id="segundos" class="valor"></span>
           <span class="unidade">segundos</span>
         </div>
-      </div></div>
-  </div>
+      </div>
+    </div>
 </div>
 
 

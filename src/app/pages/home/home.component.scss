@@ -9,6 +9,93 @@
   background-position: top;
 }
 
+.photo1{
+  background-image: url(../../../assets/img/casal/outra.jpeg);
+  width: 80vw; /* Ocupa 80% da largura da viewport */
+  height: calc(80vw * 4 / 3); /* Mantém uma proporção de 3:4 (400px/300px) */
+  max-width: 300px; /* Limita o tamanho máximo em telas maiores */
+  max-height: 400px;
+  background-size: cover; /* ajusta a imagem para cobrir o container */
+  background-position: center;
+  box-shadow: 10px 10px 10px #bfdfc8; /* Adiciona sombra para efeito de elevação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.photo2{
+  background-image: url(../../../assets/img/casal/aliancas.jpeg);
+  width: 80vw; /* Ocupa 80% da largura da viewport */
+  height: calc(80vw * 4 / 3); /* Mantém uma proporção de 3:4 (400px/300px) */
+  max-width: 300px; /* Limita o tamanho máximo em telas maiores */
+  max-height: 400px;
+  background-size: cover; /* ajusta a imagem para cobrir o container */
+  background-position: center;
+  box-shadow: 10px 10px 10px #bfdfc8; /* Adiciona sombra para efeito de elevação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.bg-image-card {
+  position: relative;
+  background-image: url('/assets/img/casal/oficial.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slider {
+  margin: 0 auto; /* centraliza o carrossel */
+}
+
+.picsum-img-wrapper img {
+  width: 100%;
+  height: 15rem;
+  object-fit: contain; /* faz a imagem se ajustar ao contêiner */
+  background-color: #f0f0f0; /* cor de fundo opcional para as áreas vazias */
+}
+
+
+.container {
+  padding-top: 4rem;
+  height: 100vh;
+}
+
+.overlay {
+  background-color: rgba(145, 159, 144, 0.3); // Sombra para destacar o texto
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-center h1 {
+  font-size: 7em;
+  font-family: 'Myfont', 'sans-serif';
+}
+
+.invite, .date {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+
+
+
+.photo-card {
+  max-width: 24%;
+  margin: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+
+}
+
 .home .banner-left-inferior {
   width: 33%;
   height: 100%;
@@ -22,17 +109,16 @@
 }
 
 .general {
-  display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   font-family: "Glacialfont", sans-serif;
   padding-bottom: 2rem;
-  color: #614124;
+  color: #ffffff;
 }
 
 .bible-text {
+  display: flex;
   padding: 2.5rem;
   line-height: 1.2;
   font-size: 20px;
@@ -40,11 +126,6 @@
 
 .middle-position{
   padding-top: 3rem;
-}
-
-.middle-position h1 {
-  font-size: 6em;
-  font-family: 'Myfont', 'sans-serif';
 }
 
 .invite {
@@ -57,8 +138,8 @@
 .date{
   text-transform: uppercase;
   font-size: 25px;
-  border-top: 1px solid #614124;
-  border-bottom: 1px solid #614124;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
   display: inline-block;
   padding: 20px;
 }
@@ -95,7 +176,7 @@ a{
 
 .img-menu {
   width: 100%;
-  max-width: 100px;
+  max-width: 9rem;
 }
 
 .contagem {
@@ -128,6 +209,32 @@ a{
   font-weight: bold;
 }
 
+/* Esconde o carrossel em telas maiores que 768px */
+.slider {
+  display: none !important;
+}
+
+.img-verse {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+@media(max-width: 990px){
+  .slider {
+    width: 31vh;
+    height: 15rem;
+    display: block !important;
+  }
+
+  .img-verse {
+    display: none !important;
+  }
+
+  .container {
+    padding-top: 2rem !important;
+  }
+}
 
 @media (min-width: 800px) and (max-width: 1330px) {
   .bible-text{
@@ -147,7 +254,7 @@ a{
   }
 
   .img-menu {
-    max-width: 90px;
+    max-width: 9rem;
   }
 
   .valor {
@@ -156,8 +263,9 @@ a{
 }
 
 @media (max-width: 799px) {
-  .home .banner-right {
-    width: 40%;
+
+  .bg-image-card {
+    background-image: url('/assets/img/casal/oficial2.png');
   }
 
   .home .banner-left-inferior {
@@ -172,7 +280,7 @@ a{
     font-size: 12px;
   }
 
-  .middle-position h1 {
+  .content-center h1 {
     font-size: 4.5em;
   }
 
@@ -215,7 +323,7 @@ a{
     font-size: 8px;
   }
 
-  .middle-position h1 {
+  .content-center h1 {
     font-size: 3em;
   }
 

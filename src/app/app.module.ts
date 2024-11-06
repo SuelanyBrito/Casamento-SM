@@ -26,7 +26,9 @@ import {MatSort} from "@angular/material/sort";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from "@angular/material/input"
 import { DialogComponent } from './sharepage/dialog/dialog.component';
-import {MatCard} from "@angular/material/card";
+import {MatCard, MatCardContent, MatCardImage} from "@angular/material/card";
+import {IgxCarouselModule, IgxSliderModule} from "igniteui-angular";
+import {NgbCarouselModule, NgbSlide} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -40,27 +42,33 @@ import {MatCard} from "@angular/material/card";
     ImageGalleryComponent,
     ListaCasamentoComponent
   ],
-    imports: [
-        BrowserModule,
-        ClipboardModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-        HttpClientModule,
-        ApolloModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatTableModule,
-        MatSelectModule,
-        MatCheckbox,
-        MatPaginator,
-        MatSort,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatCard,
-        MatProgressSpinnerModule
-    ],
+  imports: [
+    BrowserModule,
+    NgbCarouselModule,
+    ClipboardModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    HttpClientModule,
+    ApolloModule,
+    IgxCarouselModule,
+    IgxSliderModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatSelectModule,
+    MatCheckbox,
+    MatPaginator,
+    MatSort,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatCard,
+    MatProgressSpinnerModule,
+    MatCardImage,
+    MatCardContent,
+    NgbSlide
+  ],
   providers: [
     graphqlProvider,
     Apollo
