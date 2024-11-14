@@ -2,16 +2,31 @@
   <div class="banner-left-inferior"></div>
 
   <mat-card class="bg-image-card">
-    <div class="overlay" style="display: flex">
-      <div class="content-center">
-        <h1>Samuel e Mariana</h1>
-        <p class="invite">Convidam para a cerimônia</p>
-        <p class="date">08 Fevereiro, 2025 às 15:00</p>
+    <div class="overlay" >
+      <div class="text-initial" style="display: flex">
+        <div class="content-center" >
+          <h1>Samuel e Mariana</h1>
+          <p class="invite">Convidam para a cerimônia</p>
+          <p class="date">08 Fevereiro, 2025 às 15:00</p>
+        </div>
       </div>
+
+    <button
+      type="button" style="position: fixed;
+    bottom: 25px;
+    right: 30px;
+    background: #3B784E;
+    border-color: #3B784E;
+    width: 8vh;
+    height: 5vh;
+    transition: all 0.4s;"
+      class="btn btn-primary back-to-top" id="btn-back-to-top" (click)="scrollToContent()">
+      <i class="bi bi-arrow-down"></i>
+    </button>
     </div>
   </mat-card>
 
-    <div class="container">
+    <div #content class="container">
 
       <ngb-carousel class="slider" [interval]="5000">
 

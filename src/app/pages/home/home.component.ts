@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('content') contentElement!: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
+
+  scrollToContent() {
+    const yOffset = 0;
+    const target = this.contentElement.nativeElement.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+
 
 }
 
