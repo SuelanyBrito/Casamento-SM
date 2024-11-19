@@ -20,8 +20,10 @@
     width: 8vh;
     height: 5vh;
     transition: all 0.4s;"
-      class="btn btn-primary back-to-top" id="btn-back-to-top" (click)="scrollToContent()">
-      <i class="bi bi-arrow-down"></i>
+      class="btn btn-primary back-to-top"
+      id="btn-back-to-top"
+      (click)="scrollToContent()">
+      <i class="bi" [ngClass]="isAtBottom ? 'bi-arrow-up' : 'bi-arrow-down'"></i>
     </button>
     </div>
   </mat-card>

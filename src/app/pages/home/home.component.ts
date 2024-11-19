@@ -7,20 +7,31 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   @ViewChild('content') contentElement!: ElementRef;
+  isAtBottom: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'auto' });
+    window.addEventListener('scroll', this.checkScrollPosition.bind(this));
   }
 
   scrollToContent() {
-    const yOffset = 0;
-    const target = this.contentElement.nativeElement.getBoundingClientRect().top + window.scrollY + yOffset;
-    window.scrollTo({ top: target, behavior: 'smooth' });
+    if (this.isAtBottom) {
+      // Voltar para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Ir para o conteúdo
+      const yOffset = 0;
+      const target = this.contentElement.nativeElement.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }
   }
 
-
+  checkScrollPosition() {
+    const bottomThreshold = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
+    this.isAtBottom = bottomThreshold;
+  }
 }
 
 interface ContagemRegressiva {
