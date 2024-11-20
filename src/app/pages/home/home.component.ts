@@ -29,8 +29,12 @@ export class HomeComponent implements OnInit {
   }
 
   checkScrollPosition() {
-    const bottomThreshold = window.innerHeight + window.scrollY >= document.body.offsetHeight - 50;
-    this.isAtBottom = bottomThreshold;
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  // Define como "at bottom" se estiver próximo do fim da página
+  this.isAtBottom = scrollPosition + viewportHeight >= pageHeight - 50;
   }
 }
 
