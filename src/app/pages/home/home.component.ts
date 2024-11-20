@@ -1,42 +1,51 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('content') contentElement!: ElementRef;
   isAtBottom: boolean = false;
+  private scrollListener!: () => void;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    // Garantir que a página inicia no topo
     window.scrollTo({ top: 0, behavior: 'auto' });
-    window.addEventListener('scroll', this.checkScrollPosition.bind(this));
+
+    // Adiciona evento de scroll
+    this.scrollListener = this.checkScrollPosition.bind(this);
+    window.addEventListener('scroll', this.scrollListener);
+  }
+
+  ngOnDestroy(): void {
+    // Remove o listener ao destruir o componente
+    window.removeEventListener('scroll', this.scrollListener);
   }
 
   scrollToContent() {
     if (this.isAtBottom) {
-      // Voltar para o topo
+      // Voltar ao topo
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Ir para o conteúdo
-      const yOffset = 200;
-      const target = this.contentElement.nativeElement.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: target, behavior: 'smooth' });
+      const targetPosition = this.contentElement.nativeElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: targetPosition , behavior: 'smooth' }); // Ajuste para compensar margens
     }
   }
 
   checkScrollPosition() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-  // Define como "at bottom" se estiver próximo do fim da página
-  this.isAtBottom = scrollPosition + viewportHeight >= pageHeight - 50;
+    this.isAtBottom = scrollPosition + viewportHeight >= pageHeight - 5; // Aumente/diminua o valor para maior precisão
   }
 }
+
 
 interface ContagemRegressiva {
   dias: number;
