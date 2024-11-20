@@ -1,48 +1,36 @@
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild,  AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements AfterViewInit {
   @ViewChild('content') contentElement!: ElementRef;
   isAtBottom: boolean = false;
-  private scrollListener!: () => void;
 
   constructor() {}
 
-  ngOnInit(): void {
-    // Garantir que a página inicia no topo
-    window.scrollTo({ top: 0, behavior: 'auto' });
+  ngAfterViewInit(): void {
+    // Adiciona evento de scroll com uma função simples
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.body.scrollHeight;
 
-    // Adiciona evento de scroll
-    this.scrollListener = this.checkScrollPosition.bind(this);
-    window.addEventListener('scroll', this.scrollListener);
-  }
-
-  ngOnDestroy(): void {
-    // Remove o listener ao destruir o componente
-    window.removeEventListener('scroll', this.scrollListener);
+      // Atualiza estado de acordo com a posição
+      this.isAtBottom = scrollPosition >= pageHeight - 50;
+    });
   }
 
   scrollToContent() {
     if (this.isAtBottom) {
-      // Voltar ao topo
+      // Volta ao topo
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      // Ir para o conteúdo
-      const targetPosition = this.contentElement.nativeElement.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({ top: targetPosition , behavior: 'smooth' }); // Ajuste para compensar margens
+      // Vai até o conteúdo
+      const targetPosition = this.contentElement.nativeElement.offsetTop;
+      window.scrollTo({ top: targetPosition + 200, behavior: 'smooth' });
     }
-  }
-
-  checkScrollPosition() {
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    this.isAtBottom = scrollPosition + viewportHeight >= pageHeight - 5; // Aumente/diminua o valor para maior precisão
   }
 }
 
