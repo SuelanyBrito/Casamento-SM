@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Ir para o conteúdo
-      const yOffset = 0;
+      const yOffset = 200;
       const target = this.contentElement.nativeElement.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: target, behavior: 'smooth' });
     }
