@@ -310,6 +310,11 @@ a{
 }
 
 @media (max-width: 500px) {
+
+  .menu-item{
+    padding: 1rem;
+  }
+
   .home .banner-left-inferior {
     width: 100%;
   }
