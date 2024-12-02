@@ -75,13 +75,14 @@ export class BackService {
     this.apollo
       .watchQuery({
         query: gql`
-          query MyQuery($id: String!, $person: String!, $quantity: Int!) {
-            mark(id: $id, person: $person, quantity: $quantity)
+          query MyQuery($id: String!, $person: String!, $quantity: Int!, $quantityPrimary: Int!) {
+            mark(id: $id, person: $person, quantity: $quantity, quantityPrimary: $quantityPrimary)
           }
         `,
         variables: {
           id: item.item.id,
           person: name_user,
+          quantityPrimary: item.quantity,
           quantity: item.item.number - item.quantity,
         },
       })
